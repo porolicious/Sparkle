@@ -7,14 +7,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    function loadPage(){
+      $.post("signup.php", $("#register").serialize(), function(data, status){
+          alert( data );
+      });
+    }
+  </script>
 </head>
-<body>
 
+<body>
   <div class="container">
     <h2>Sign up</h2>
     <p>Please fill in the form below<br>
     * required fields</p>
-    <form action="signup.php" method="post">
+    <form action="javascript:loadPage()" method="post" id="register">
       <div class="form-group">
         <label for="usr">*Username: </label>
         <input type="text" class="form-control" name="user" id="usr">
