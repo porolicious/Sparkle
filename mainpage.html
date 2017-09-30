@@ -7,6 +7,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    function loadPage(url, formId){
+      $.post(url, $(formId).serialize(), function(data, status){
+          alert( data );
+      });
+    }
+  </script>
 </head>
 <body>
   <nav class="navbar navbar-inverse">
@@ -34,14 +41,35 @@
           <li><a href="#">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li>
+            <a href="signupForm2.html" data-toggle="modal" data-target="#modalSignup">
+              <span class="glyphicon glyphicon-user"></span> Sign up
+            </a>
+          </li>
+          <li>
+            <a href="login.html" data-toggle="modal" data-target="#modalLogin">
+              <span class="glyphicon glyphicon-log-in"></span> Login
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <h3>Bla blabla bla blabla bla</h3>
   <div class="container">
-    <h3>Bla blabla bla blabla bla</h3>
+    <h3>Bla blabla bla blabla blaBla blabla bla blabla blaBla blabla bla blabla blaBla blabla bla blabla blaBla blabla bla blabla bla</h3>
+  </div>
+
+  <div class="modal fade" id="modalSignup" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalLogin" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content"></div>
+    </div>
+  </div>
 </body>
 </html>
